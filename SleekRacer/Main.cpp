@@ -31,11 +31,17 @@ public:
 };
 
 class PowerUp {
-
+public:
+	virtual void activate(WackyRacer& racer) = 0;
 };
 
 class SpeedBoost : public PowerUp {
-
+public:
+	void activte(WackyRacer& raacer) override
+	{
+		racer.setSpeed(acer.getdistance() >= 50 ? 4 : 3);
+		std::cout << racer.getCarName() << " activated a speed boost!\n";
+	}
 };
 
 class Obstacle {
