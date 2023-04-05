@@ -24,7 +24,7 @@ public:
 		distance += speed;
 	}
 
-	private;
+private:
 	std::string carName;
 	int distance;
 	int speed;
@@ -32,14 +32,14 @@ public:
 
 class PowerUp {
 public:
-	virtual void activate(WackyRacer& racer) = 0;
+	virtual void activate(SleekRacer& racer) = 0;
 };
 
 class SpeedBoost : public PowerUp {
 public:
-	void activte(WackyRacer& raacer) override
+	void activte(SleekRacer& racer) override
 	{
-		racer.setSpeed(acer.getdistance() >= 50 ? 4 : 3);
+		racer.setSpeed(racer.getDistance() >= 50 ? 4 : 3);
 		std::cout << racer.getCarName() << " activated a speed boost!\n";
 	}
 };
@@ -71,7 +71,7 @@ void progressVisualisation(const std::vector<SleekRacer> &racers, const std::vec
 	for (const auto& racer : racers)
 	{
 		std::cout << racer.getCarName() << ": ";
-		for (int i = 0; i < racer.getDistancce() / 5; ++i)
+		for (int i = 0; i < racer.getDistance() / 5; ++i)
 		{
 			bool passedObstacle = false;
 			for (const auto& obstacle : obstacles)
