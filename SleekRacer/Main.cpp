@@ -65,6 +65,33 @@ public:
 	}
 };
 
+void progressVisualisation(const std::vector<SleekRacer> &racers, const std::vector<Obstacle *> &obstacles)
+{
+	std::cout << "\nRace Progress Visualisation:\n";
+	for (const auto& racer : racers)
+	{
+		std::cout << racer.getCarName() << ": ";
+		for (int i = 0; i < racer.getDistancce() / 5; ++i)
+		{
+			bool passedObstacle = false;
+			for (const auto& obstacle : obstacles)
+			{
+				if (obstacle->isPassed(i * 5))
+				{
+					std::cout << "X";
+					passedObstacle = true;
+					break;
+				}
+			}
+			if (!passedObstacle)
+			{
+				std::cout << "-";
+			}
+		}
+		std::cout << "\n";
+	}
+	std::cout << "\n";
+}
 
 int main() {
 	std::cout << "Sleek Racer" << std::endl;
