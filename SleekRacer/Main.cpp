@@ -45,15 +45,24 @@ public:
 };
 
 class Obstacle {
-
+public:
+	virtual bool isPassed(int distance) const = 0;
 };
 
 class TightTurn : public Obstacle {
-
+public:
+	bool isPassed(int distance) const override
+	{
+		return distance >= 20;
+	}
 };
 
 class Ramp : public Obstacle {
-
+public:
+	bool isPassed(int distance) const override
+	{
+		return distance >= 40;
+	}
 };
 
 
