@@ -1,4 +1,4 @@
-// Include necessary header files
+﻿// Include necessary header files
 #include <iostream>
 #include <string>
 #include <vector>
@@ -101,7 +101,13 @@ int main()
                 farthestRacer = &racer; // set the current racer as the farthest racer so far
             }
         }
-
+        
+        system("cls");
+        std::cout << "SLEEK RACER" << std::endl;
+        std::cout << "  _______" << std::endl;
+        std::cout << " /|_||_\\`.__" << std::endl;
+        std::cout << "(   _    _ _\\" << std::endl;
+        std::cout << "=`-(_)--(_)-' " << std::endl;
         progressVisualization(racers, obstacles); // Visualize the race progress
 
         std::cout << "Press Enter to continue the race...";
